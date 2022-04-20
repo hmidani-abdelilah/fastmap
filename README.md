@@ -1,4 +1,4 @@
-<p align="centre"><img src="/docs/fastmap_icon.png" align="middle" alt="fastmap" /></p>
+<p align="center"><img src="/docs/fastmap_icon.png" align="middle" alt="fastmap" /></p>
 
 Fastmap is an efficient networking tool for linux. It combines the power of nmap, fing's api, tcpdump and much more.
 
