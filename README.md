@@ -41,6 +41,8 @@ ss
 host
 nslookup
 mtr
+tmux
+aircrack-ng
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).

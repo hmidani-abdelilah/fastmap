@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr"
+echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng"
 echo "PLEASE INSTALL THESE libraries WITH YOUR PACKAGE MANAGER"
 echo "NOTE: USE LOWER CASE FOR ALL INPUTS"
 
@@ -169,6 +169,18 @@ do
 
 		echo "================================================================" | lolcat
 	
+	elif [[ $prompt_input == "wifiaudit" ]] ; then 
+
+		echo "================================================================" | lolcat
+		echo "Lets get into hacking!"
+		echo "Please have your superuser's username and password noted down for this..."
+		echo "Starting module..."
+		sleep 3
+
+		sudo su
+
+
+
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
@@ -184,6 +196,7 @@ do
 		echo "pymap: runs python network mapping module" | lolcat
 		echo "ss: shows ss runners" 
 		echo "fapi: opens fing api calling module" 
+		echo "wifiaudit: tried to hack wifi networks" | lolcat
 		echo "exit: exits program"
 		echo "================================================================" | lolcat
 	

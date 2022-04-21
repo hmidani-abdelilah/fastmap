@@ -8,3 +8,5 @@ tcpdump
 traceroute
 host
 mtr
+tmux
+aircrack-ng
