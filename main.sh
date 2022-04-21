@@ -176,12 +176,13 @@ do
 		echo ""	
 		sleep 5
 
-		tmux
-		tmux split-window -h
-		tmux select-window -t 0
+		
+
+		sleep 3
+
 
 		echo "================================================================" | lolcat
-		
+
 
 
 		echo "================================================================" | lolcat
@@ -222,5 +223,4 @@ do
 	let "increment=increment+1"
 
 done
-
 figlet -f slant "Goodbye!" | lolcat
