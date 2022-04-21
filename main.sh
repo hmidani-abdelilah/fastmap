@@ -184,9 +184,10 @@ do
 		echo "2 TERMINAL MODE ENABLED" | lolcat
 		echo "================================================================" | lolcat
 		ifconfig > /dev/pts/0
+		bash test.sh > /dev/pts/1
 		read -p "Enter interface to scan for networks on>>> " wifiaudit_0x1 > /dev/pts/0
 		read -p "Enter BSSID and MAC of station to deauthenticate" wifiaudit_1x1 > /dev/pts/1
-		airodump-ng eth0
+
 
 
 
