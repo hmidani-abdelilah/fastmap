@@ -171,22 +171,22 @@ do
 	
 	elif [[ $prompt_input == "wifiaudit" ]] ; then 
 
-		echo ""
-		echo "STARTING TMUX TO SPLIT WINDOWS"
-		echo ""	
-		sleep 5
-
-		tmux new -s session_testing
+		read -p "ONLY KEEP 2 TERMINAL TABS/WINDOWS OPEN!! PRESS ENTER WHEN YOU HAVE DONE THIS" null0x1
+		echo "USING TTY SESSIONS AT /DEV/PTS/* TO CONTROL NOW. CNTL+C TO ABORT"
 		sleep 1
-		tmux ls
+		echo "starting"
 		sleep 1
-		tmux attach-session -t 0
-		
-
-		sleep 3
-
-
+		echo "...."
+		echo "Starting" > /dev/pts/1
+		sleep 1 
+		echo "........"
+		sleep 1
+		echo "2 TERMINAL MODE ENABLED" | lolcat
 		echo "================================================================" | lolcat
+		ifconfig > /dev/pts/0
+		read -p "Enter interface to scan for networks on>>> " wifiaudit_0x1 > /dev/pts/0
+		read -p "Enter BSSID and MAC of station to deauthenticate" wifiaudit_1x1 > /dev/pts/1
+
 
 
 
