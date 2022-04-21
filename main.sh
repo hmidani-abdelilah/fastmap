@@ -176,6 +176,11 @@ do
 		echo ""	
 		sleep 5
 
+		tmux new -s session_testing
+		sleep 1
+		tmux ls
+		sleep 1
+		tmux attach-session -t 0
 		
 
 		sleep 3
