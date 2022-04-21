@@ -171,13 +171,26 @@ do
 	
 	elif [[ $prompt_input == "wifiaudit" ]] ; then 
 
+		echo ""
+		echo "STARTING TMUX TO SPLIT WINDOWS"
+		echo ""	
+		sleep 5
+
+		tmux
+		tmux split-window -h
+		tmux select-window -t 0
+
+		echo "================================================================" | lolcat
+		
+
+
 		echo "================================================================" | lolcat
 		echo "Lets get into hacking!"
 		echo "Please have your superuser's username and password noted down for this..."
 		echo "Starting module..."
 		sleep 3
-
-		sudo su
+		echo 
+		
 
 
 
