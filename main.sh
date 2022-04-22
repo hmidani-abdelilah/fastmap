@@ -179,22 +179,37 @@ do
 		read -p "Enter tty number for terminal 2>>> " tty_0x2
 
 		sleep 1
-
 		echo "Starting" > /dev/pts/$tty_0x1
-
-		echo "starting" > tty_0x1
+		echo "Starting" > /dev/pts/$tty_0x2
 		sleep 1
+
 		echo "...."
-		echo "Starting" > /dev/pts/1
 		sleep 1 
 		echo "........"
 		sleep 1
 		echo "2 TERMINAL MODE ENABLED" | lolcat
 		echo "================================================================" | lolcat
-		ifconfig > /dev/pts/0
-		bash test.sh > /dev/pts/1
-		read -p "Enter interface to scan for networks on>>> " wifiaudit_0x1 > /dev/pts/0
-		read -p "Enter BSSID and MAC of station to deauthenticate" wifiaudit_1x1 > /dev/pts/1
+		
+		sudo airmon-ng > /dev/pts/$tty_0x1
+		read -p "Enter interface to scan for networks on>>> " wifiaudit_0x1 > /dev/pts/$tty_0x1
+		read -p "press [ENTER] to start monitor mode" wifiaudit_mon_0x1 > /dev/pts/$tty_0x1
+
+		#sudo airmon-ng check kill
+		#sudo airmon-ng start ""$wifiaudit_0x1"mon" > /dev/pts/$tty_0x1
+
+		read -p "PRESS ENTER TO START LOOKING FOR NETWORKS " wifiaudit_mon_0x2 > /dev/pts/$tty_0x1
+
+		echo "KEEP THE BSSID, STATION ID AND CHANNEL ID NOTED DOWN FOR THE NEXT COMMAND" > /dev/pts/$tty_0x2
+
+		#sudo airodump-ng $wifiaudit_0x1 > /dev/pts/$tty_0x1
+
+		#sudo airmon-ng stop ""$wifiaudit_0x1"mon"
+
+
+
+		
+		
+		read -p "Enter BSSID and MAC of station to deauthenticate" wifiaudit_1x1 > /dev/pts/$tty_0x2
 
 
 
