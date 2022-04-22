@@ -174,7 +174,15 @@ do
 		read -p "ONLY KEEP 2 TERMINAL TABS/WINDOWS OPEN!! PRESS ENTER WHEN YOU HAVE DONE THIS" null0x1
 		echo "USING TTY SESSIONS AT /DEV/PTS/* TO CONTROL NOW. CNTL+C TO ABORT"
 		sleep 1
-		echo "starting"
+
+		read -p "Enter tty number for terminal 1>>> " tty_0x1
+		read -p "Enter tty number for terminal 2>>> " tty_0x2
+
+		sleep 1
+
+		echo "Starting" > /dev/pts/$tty_0x1
+
+		echo "starting" > tty_0x1
 		sleep 1
 		echo "...."
 		echo "Starting" > /dev/pts/1
