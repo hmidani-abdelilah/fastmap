@@ -135,7 +135,7 @@ do
 		echo "================================================================" | lolcat
 		read -p "Trace and ping to host>>> " mtr_0x1
 		echo "STARTING MTR GUI"
-		mtr $mtr_0x1
+		sudo mtr $mtr_0x1
 		echo "EXITING MTR"
 		echo "================================================================" | lolcat
 	
@@ -190,7 +190,7 @@ do
 		echo "2 TERMINAL MODE ENABLED" | lolcat
 		echo "================================================================" | lolcat
 		
-		sudo airmon-ng > /dev/pts/$tty_0x1
+		sudo airmon-ng > /dev/pts/$tty_0x2
 		read -p "Enter interface to scan for networks on>>> " wifiaudit_0x1 > /dev/pts/$tty_0x1
 		read -p "press [ENTER] to start monitor mode" wifiaudit_mon_0x1 > /dev/pts/$tty_0x1
 

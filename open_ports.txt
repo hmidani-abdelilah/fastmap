@@ -1,7 +1,0 @@
-Discovered open port 3389/tcp on 192.168.1.11
-Discovered open port 22/tcp on 192.168.1.11
-Discovered open port 80/tcp on 192.168.1.11
-Discovered open port 111/tcp on 192.168.1.11
-Discovered open port 5038/tcp on 192.168.1.11
-Discovered open port 6000/tcp on 192.168.1.11
-Discovered open port 2000/tcp on 192.168.1.11
