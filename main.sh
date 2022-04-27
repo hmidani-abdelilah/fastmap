@@ -222,8 +222,10 @@ do
 		echo 
 		
 
+	elif [[ $prompt_input == "cls" ]] ; then
 
-
+		clear
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
