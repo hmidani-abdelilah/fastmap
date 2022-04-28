@@ -15,6 +15,7 @@ echo ""
 read -p "Value of i: " increment
 echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
+echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | lolcat
 echo ""
 
 divider="================================================================" | lolcat
@@ -225,11 +226,16 @@ do
 	elif [[ $prompt_input == "cls" ]] ; then
 
 		clear
+
+	elif [[ $prompt_input == "l" ]] ; then
+
+		fc -e : -1
 	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
+		echo "l: execute last command"| lolcat
 		echo "netmap: opens network mapping module" | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
