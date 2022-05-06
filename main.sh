@@ -231,6 +231,15 @@ do
 
 		fc -e : -1
 	
+	elif [[ $prompt_input == "pyport" ]] ; then
+
+		echo "================================================================" | lolcat
+		echo "Starting Python Port Scanner"
+		echo "This is gonna be a bit slow"
+		read -p "Enter ip address to scan>>> " pyport_0x1
+		sudo python3 pyport.py $pyport_0x1
+		echo "================================================================" | lolcat
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
@@ -245,6 +254,7 @@ do
 		echo "nsl: lookup nameservers"
 		echo "lhost: lookup hosts"
 		echo "pymap: runs python network mapping module" | lolcat
+		echo "pyport: runs python port scanning module"
 		echo "ss: shows ss runners" 
 		echo "fapi: opens fing api calling module" 
 		echo "wifiaudit: tried to hack wifi networks" | lolcat
