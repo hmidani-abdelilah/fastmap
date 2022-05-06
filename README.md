@@ -124,3 +124,7 @@ To use this module, you will need to input the interface name that you want to c
 ![LHOSTLOOKUP](/docs/lhost.png)
 
 `>>> pymap`: Performs ARP scan on the specified network. This module uses python3 and the prerequisites will have to be install manually.
+
+`>>> pyport`: Performs a port scan for the specified host. This module requires python3 and the prerequisites will have to be install manually.
+
+![PyPort](/docs/pyport.png)
