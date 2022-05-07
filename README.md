@@ -43,6 +43,8 @@ nslookup
 mtr
 tmux
 aircrack-ng
+vnstat
+vnstati
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
@@ -128,3 +130,9 @@ To use this module, you will need to input the interface name that you want to c
 `>>> pyport`: Performs a port scan for the specified host. This module requires python3 and the prerequisites will have to be install manually.
 
 ![PyPort](/docs/pyport.png)
+
+`>>> traffic`: Calculates traffic for the specified network interface. You will require vnstat and vnstati to run in the background and the program will collect that data and display it in a graph in the folder of fastmap. It should look like this:
+
+![vnstatcmd](/doc/vnstatcmd.png)
+
+![vnstatpi](/docs/vnstati_pi.png)
