@@ -255,7 +255,7 @@ do
 			vnstati -5 -i $traffic_interface_0x1 -o vnstati_5.png
 			echo "Graph saved to vnstati_5.png in this folder"
 		elif [[ $traffice_0x1 == "pi" ]] ;  then
-			vnstati -s -i $traffice_interface_0x1 -o vnstati_pi.png
+			vnstati -s -i $traffic_interface_0x1 -o vnstati_pi.png
 			echo "Graph saved to vnstati_pi.png in this folder"
 		fi
 
