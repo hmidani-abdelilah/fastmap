@@ -133,6 +133,6 @@ To use this module, you will need to input the interface name that you want to c
 
 `>>> traffic`: Calculates traffic for the specified network interface. You will require vnstat and vnstati to run in the background and the program will collect that data and display it in a graph in the folder of fastmap. It should look like this:
 
-![vnstatcmd](/doc/vnstatcmd.png)
+![vnstatcmd](/docs/vnstatcmd.png)
 
 ![vnstatpi](/docs/vnstati_pi.png)
