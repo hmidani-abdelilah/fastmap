@@ -249,14 +249,13 @@ do
 		read -p "Interface to collect data on>>> " traffic_interface_0x1
 		read -p "Hour(h)/5min(5)/pi()>>> " traffice_0x1
 		if [[ $traffice_0x1 == "h" ]] ; then
-			read -p "Path to save hourly traffic data (graph) to>>> " traffic_h_0x1
-			vnstati -h -i $traffice_interface_0x1 -o traffic_h_0x1
-			echo "Graph saved to $traffic_h_0x1"
+			vnstati -h -i $traffic_interface_0x1 -o vnstati_hourly.png
+			echo "Graph saved to vnstati_hourly.png in this folder"
 		elif [[ $traffice_0x1 == "5" ]] ; then 
-			read -p "Path to save 5minute(ly) traffic data (graph) to>>> " traffic_h_0x1
-			vnstati -5 -i $traffice_interface_0x1 -o traffic_h_0x1
-			echo "Graph saved to $traffic_h_0x1"
-	
+			vnstati -5 -i $traffic_interface_0x1 -o vnstati_5.png
+			echo "Graph saved to vnstati_5.png in this folder"
+		fi
+
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
