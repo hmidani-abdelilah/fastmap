@@ -254,6 +254,9 @@ do
 		elif [[ $traffice_0x1 == "5" ]] ; then 
 			vnstati -5 -i $traffic_interface_0x1 -o vnstati_5.png
 			echo "Graph saved to vnstati_5.png in this folder"
+		elif [[ $traffice_0x1 == "pi" ]] ;  then
+			vnstati -s -i $traffice_interface_0x1 -o vnstati_pi.png
+			echo "Graph saved to vnstati_pi.png in this folder"
 		fi
 
 	elif [[ $prompt_input == "help" ]] ; then
@@ -264,6 +267,7 @@ do
 		echo "netmap: opens network mapping module" | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
+		echo "traffic: open traffic total monitoring module" | lolcat
 		echo "gp: opens graphical pinging module" | lolcat
 		echo "trace: traces packets to specified host"
 		echo "gtrace: traces packets to specified host in GUI" | lolcat
