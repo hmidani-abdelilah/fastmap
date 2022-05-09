@@ -12,3 +12,4 @@ tmux
 aircrack-ng
 vnstat
 vnstati
+randtype
