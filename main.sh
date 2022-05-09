@@ -15,7 +15,7 @@ echo ""
 read -p "Value of i: " increment
 echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
-echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | lolcat | randtype
+echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | lolcat | randtype -t 5,16500
 echo ""
 
 divider="================================================================" | lolcat
