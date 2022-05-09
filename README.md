@@ -45,6 +45,7 @@ tmux
 aircrack-ng
 vnstat
 vnstati
+randtype
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
