@@ -53,7 +53,7 @@ Install these with your prefered package manager for your linux distribution (ap
 Example- for debian distributions, the installation would look like this: 
 
 ```
-xargs sudo apt-get install < requirements.txt
+xargs sudo apt-get install -y < requirements.txt
 ```
 
 Also a python pip3 installation is required for the `pymap` and `argparse` module.
