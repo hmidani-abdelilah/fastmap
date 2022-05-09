@@ -254,11 +254,13 @@ do
 
 		if [[ $traffice_0x1 == "h" ]] ; then
 
+			vnstat -h -i $traffic_interface_0x1
 			vnstati -h -i $traffic_interface_0x1 -o vnstati_hourly.png
 			echo "Graph saved to vnstati_hourly.png in this folder"
 
-		elif [[ $traffice_0x1 == "5" ]] ; then 
+		elif [[ $traffice_0x1 == "5" ]] ; then
 
+			vnstat -5 -i $traffic_interface_0x1
 			vnstati -5 -i $traffic_interface_0x1 -o vnstati_5.png
 			echo "Graph saved to vnstati_5.png in this folder"
 
