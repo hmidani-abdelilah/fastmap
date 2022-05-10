@@ -50,6 +50,7 @@ vnstat
 vnstati
 randtype
 speedtest-cli
+bash
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
@@ -64,11 +65,12 @@ OR you could install it using the program `install.sh`
 
 # Running
 
-To run fastmap, use bash as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
+To run fastmap, use `bash` as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
 
 The file that controls everything in fastmap is `main.sh` so to run it you will have to do this:
 
 ```bash
+bash
 chmod +x main.sh
 ./main.sh
 ```
