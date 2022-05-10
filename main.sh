@@ -15,7 +15,7 @@ echo ""
 read -p "Value of i: " increment
 echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
-echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | lolcat | randtype -t 5,16500
+echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | randtype -t 5,16500 | lolcat
 echo ""
 
 divider="================================================================" | lolcat
@@ -273,6 +273,16 @@ do
 
 		echo "================================================================" | lolcat
 
+	elif [[ $prompt_input == "speed" ]] ; then
+
+		echo "================================================================" | lolcat
+		echo "Starting speedtest-cli" | randtype -t 5,16500 | lolcat
+
+		speedtest-cli
+
+		echo "Speedtest completed successfully" | randtype -t 5,16500 | lolcat		
+		echo "================================================================" | lolcat
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
