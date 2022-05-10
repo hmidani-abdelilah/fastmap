@@ -24,8 +24,6 @@ chmod +x gping_install.sh
 ./gping_install.sh
 ```
 
-# Prerequisites
-
 You must have these libraries installed.
 
 ```
