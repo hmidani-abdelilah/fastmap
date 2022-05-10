@@ -137,3 +137,5 @@ To use this module, you will need to input the interface name that you want to c
 ![vnstatcmd](/docs/vnstatcmd.png)
 
 ![vnstatpi](/docs/vnstati_pi.png)
+
+`>>> speed`: Runs speedtest-cli to test latency, upload speed and download speed to the nearest server.
