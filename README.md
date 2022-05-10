@@ -46,6 +46,7 @@ aircrack-ng
 vnstat
 vnstati
 randtype
+speedtest-cli
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
@@ -54,6 +55,13 @@ Example- for debian distributions, the installation would look like this:
 
 ```
 xargs sudo apt-get install -y < requirements.txt
+```
+
+OR you could install it using the program `install.sh`
+
+```bash
+chmod +x install.sh
+./install.sh
 ```
 
 Also a python pip3 installation is required for the `pymap` and `argparse` module.
