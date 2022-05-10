@@ -15,7 +15,7 @@ echo ""
 read -p "Value of i: " increment
 echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
-echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | randtype -t 5,16500 | lolcat
+echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | randtype -t 5,12000 | lolcat
 echo ""
 
 divider="================================================================" | lolcat
@@ -276,11 +276,11 @@ do
 	elif [[ $prompt_input == "speed" ]] ; then
 
 		echo "================================================================" | lolcat
-		echo "Starting speedtest-cli" | randtype -t 5,16500 | lolcat
+		echo "Starting speedtest-cli" | randtype -t 5,12000 | lolcat
 
 		speedtest-cli
 
-		echo "Speedtest completed successfully" | randtype -t 5,16500 | lolcat		
+		echo "Speedtest completed successfully" | randtype -t 5,12000 | lolcat		
 		echo "================================================================" | lolcat
 	
 	elif [[ $prompt_input == "help" ]] ; then
@@ -288,17 +288,18 @@ do
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
 		echo "l: execute last command"| lolcat
-		echo "netmap: opens network mapping module" | lolcat
+		echo "netmap: opens network mapping module" | randtype -t 5,12000 | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
 		echo "traffic: open traffic total monitoring module" | lolcat
-		echo "gp: opens graphical pinging module" | lolcat
+		echo "speed: opens speed testing module (speedtest-cli)" | randtype -t 5,12000 | lolcat
+		echo "gp: opens graphical pinging module" | randtype -t 5,12000 | lolcat
 		echo "trace: traces packets to specified host"
 		echo "gtrace: traces packets to specified host in GUI" | lolcat
 		echo "nsl: lookup nameservers"
 		echo "lhost: lookup hosts"
-		echo "pymap: runs python network mapping module" | lolcat
-		echo "pyport: runs python port scanning module"
+		echo "pymap: runs python network mapping module" | randtype -t 5,12000 | lolcat
+		echo "pyport: runs python port scanning module" | randtype -t 5,12000 | lolcat
 		echo "ss: shows ss runners" 
 		echo "fapi: opens fing api calling module" 
 		echo "wifiaudit: tried to hack wifi networks" | lolcat

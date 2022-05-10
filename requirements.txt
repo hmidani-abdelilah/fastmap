@@ -13,3 +13,4 @@ aircrack-ng
 vnstat
 vnstati
 randtype
+speedtest-cli
