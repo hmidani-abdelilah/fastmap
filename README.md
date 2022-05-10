@@ -6,10 +6,9 @@ Fastmap is an efficient networking tool for linux. It combines the power of nmap
 
 ```bash
 git clone https://github.com/FluffySnowman/fastmap.git
-
 cd fastmap
-
-chmod +x main.sh
+chmod +x install.sh
+./install.sh
 ```
 
 TO INSTALL THE `GP` (GRPAHICAL PINGING MODULE) YOU WILL HAVE TO DO IT MANUALLY.
@@ -22,6 +21,12 @@ Or for debian follow these instructions.
 chmod +x gping_install.sh
 
 ./gping_install.sh
+```
+
+Also a python pip3 installation is required for the `pymap` and `argparse` module.
+
+```
+python3 -m pip install -r req.txt
 ```
 
 You must have these libraries installed.
@@ -57,15 +62,15 @@ xargs sudo apt-get install -y < requirements.txt
 
 OR you could install it using the program `install.sh`
 
+# Running
+
+To run fastmap, use bash as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
+
+The file that controls everything in fastmap is `main.sh` so to run it you will have to do this:
+
 ```bash
-chmod +x install.sh
-./install.sh
-```
-
-Also a python pip3 installation is required for the `pymap` and `argparse` module.
-
-```
-python3 -m pip install -r req.txt
+chmod +x main.sh
+./main.sh
 ```
 
 # Usage
