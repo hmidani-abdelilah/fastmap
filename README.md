@@ -52,9 +52,7 @@ To update, use the file `update.sh` by running the command `bash update.sh`
 If you wish to install this program globally then you will have to change the mode and move it to your binaries folder (`/usr/bin`). To do this follow these steps-
 
 ```bash
-
-git clone https://github.com/FluffySnowman/fastmap.git && cd fastmap/binmap && chmod +x fastmap.sh && bash install.sh && sudo chmod +x fastmap.sh && sudo cp * /usr/bin/
-
+git clone https://github.com/FluffySnowman/fastmap.git && cd fastmap/binmap && bash install.sh && chmod +x fastmap.sh && sudo cp * /usr/bin/
 ```
 
 If you get an error related to the `docs` folder do not be alarmed. The `docs` folder has no important files related to the runtime of the program. Just images for the `README.md` file.
