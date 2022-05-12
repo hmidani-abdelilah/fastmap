@@ -47,6 +47,20 @@ OR you could install it using the program `install.sh`. To run the install: `bas
 
 To update, use the file `update.sh` by running the command `bash update.sh`
 
+<hr>
+
+If you wish to install this program globally then you will have to change the mode and move it to your binaries folder (`/usr/bin`). To do this follow these steps:
+
+```
+git clone https://github.com/FluffySnowman/fastmap.git
+cd fastmap
+bash install.sh
+chmod +x fastmap.sh
+mv * /usr/bin
+```
+
+Now if you want to use this program in your terminal you can use the command `$ fastmap.sh`
+
 # Running
 
 To run fastmap, use `bash` as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
