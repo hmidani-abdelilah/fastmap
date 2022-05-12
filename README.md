@@ -53,7 +53,7 @@ If you wish to install this program globally then you will have to change the mo
 
 ```bash
 
-git clone https://github.com/FluffySnowman/fastmap.git && chmod +x fastmap.sh && bash install.sh && cd binmap && sudo chmod +x fastmap.sh && sudo cp * /usr/bin/
+git clone https://github.com/FluffySnowman/fastmap.git  && cd binmap && chmod +x fastmap.sh && bash install.sh && sudo chmod +x fastmap.sh && sudo cp * /usr/bin/
 
 ```
 
