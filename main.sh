@@ -95,7 +95,7 @@ do
 		echo "Opening packet catching interface..." | lolcat
 		echo "================================================================" | lolcat
 		echo "AVAILABLE INTERFACES"
-		tcpdump -D | randtype -t 5,12000 | lolcat
+		tcpdump -D | randtype -t 5,2000 | lolcat
 		echo "================================================================" | lolcat
 		sleep 3
 		echo "PRESS CNTL+C TO STOP THE PACKETS FROM BEING CAPTURED"
