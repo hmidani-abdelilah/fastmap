@@ -153,7 +153,7 @@ do
 
 		echo "================================================================" | lolcat
 		read -p "Hosts to ping>>> " gping_0x1
-		echo "Starting graphical pinging interface"
+		echo "Starting graphical pinging interface" | randtype -t 5,12000 | lolcat
 		sleep 3
 		gping $gping_0x1
 		echo "================================================================" | lolcat
