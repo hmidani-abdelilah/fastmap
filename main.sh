@@ -31,7 +31,7 @@ do
 
 	elif [[ $prompt_input == "netmap" ]] ; then
 
-		echo "Starting nmap module"
+		echo "Starting nmap module" | randtype -t 5,12000 | lolcat
 		read -p "Enter host+/subnet to scan>>> " ipsub_scanvar_0x1
 		read -p "What type of scan do you want to do? (syn/port/os/arp/lp(list open ports))>>> " scan_type_0x1
 
@@ -57,17 +57,17 @@ do
 
 		elif [[ $scan_type_0x1 == "arp" ]] ; then
 
-			echo "Commencing arp scan of subnet"
+			echo "Commencing arp scan of subnet" | randtype -t 5,12000 | lolcat
 			sudo nmap -sn -vvv $ipsub_scanvar_0x1 
 
 		elif [[ $scan_type_0x1 == "syn" ]] ; then
 
-			echo "Commencing syn scan of subnet"
+			echo "Commencing syn scan of subnet" | randtype -t 5,12000 | lolcat
 			sudo nmap -sS -vvv $ipsub_scanvar_0x1 
 
 		elif [[ $scan_type_0x1 == "os" ]] ; then
 
-			echo "Commencing os scan of subnet"
+			echo "Commencing os scan of subnet" | randtype -t 5,12000 | lolcat
 			sudo nmap -O -vvv $ipsub_scanvar_0x1 
 
 		fi
@@ -88,13 +88,14 @@ do
 		read -p "Enter host to ping>>> " ping_host_0x1
 		read -p "How many seconds to ping>>> " ping_seconds_0x1
 		sudo ping -c $ping_seconds_0x1 $ping_host_0x1
+		echo "PING COMPLETED" | randtype -t 5,12000 | lolcat
 	
 	elif [[ $prompt_input == "tpackets" ]] ; then
 
 		echo "Opening packet catching interface..." | lolcat
 		echo "================================================================" | lolcat
 		echo "AVAILABLE INTERFACES"
-		tcpdump -D | lolcat
+		tcpdump -D | randtype -t 5,12000 | lolcat
 		echo "================================================================" | lolcat
 		sleep 3
 		echo "PRESS CNTL+C TO STOP THE PACKETS FROM BEING CAPTURED"
@@ -110,7 +111,7 @@ do
 	elif [[ $prompt_input == "trace" ]] ; then
 
 		echo "================================================================" | lolcat
-		echo "Packet tracing module"
+		echo "Packet tracing module" | randtype -t 5,12000 | lolcat
 		read -p "Enter host to trace packets to>>> " trace_0x1
 		read -p "ipv4 or ipv6(4/6)>>> " trace_type_0x1
 		traceroute -$trace_type_0x1 $trace_0x1
@@ -119,7 +120,7 @@ do
 	elif [[ $prompt_input == "nsl" ]] ; then
 
 		echo "================================================================" | lolcat
-		echo "Nameserver lookup module"
+		echo "Nameserver lookup module" | randtype -t 5,12000 | lolcat
 		read -p "Enter IP or domain to lookup>>> " nsl_0x1
 		nslookup $nsl_0x1
 		echo "================================================================" | lolcat
@@ -127,14 +128,14 @@ do
 	elif [[ $prompt_input == "ss" ]] ; then
 
 		echo "================================================================" | lolcat
-		echo "Showing main ss runners"
+		echo "Showing main ss runners" | randtype -t 5,12000 | lolcat
 		ss -t -a 
 		echo "================================================================" | lolcat
 	
 	elif [[ $prompt_input == "gtrace" ]] ; then
 
 		echo "================================================================" | lolcat
-		read -p "Trace and ping to host>>> " mtr_0x1
+		read -p "Trace and ping to host>>> " mtr_0x1 | randtype -t 5,12000 | lolcat
 		echo "STARTING MTR GUI"
 		sudo mtr $mtr_0x1
 		echo "EXITING MTR"
@@ -163,7 +164,7 @@ do
 		read -p "Enter gateway to scan for>>> " pymap_0x1
 
 		sudo python3 pymap.py -t $pymap_0x1 > online_hosts_pymap.txt
-		echo "Calculating total amount of online hosts..."
+		echo "Calculating total amount of online hosts..." | randtype -t 5,12000 | lolcat
 		cat online_hosts_pymap.txt
 		cat online_hosts_pymap.txt | grep -v -e "-----------------------------------" -e "IP Address" -e "MAC Address" | wc -l > total_hosts_online_pymap.txt
 		cat total_hosts_online_pymap.txt && echo " hosts online"
@@ -234,8 +235,8 @@ do
 	elif [[ $prompt_input == "pyport" ]] ; then
 
 		echo "================================================================" | lolcat
-		echo "Starting Python Port Scanner"
-		echo "This is gonna be a bit slow"
+		echo "Starting Python Port Scanner" | randtype -t 5,12000 | lolcat
+		echo "This is gonna be a bit slow" | randtype -t 5,12000 | lolcat
 		read -p "Enter ip address to scan>>> " pyport_0x1
 		sudo python3 pyport.py $pyport_0x1
 		echo "================================================================" | lolcat
