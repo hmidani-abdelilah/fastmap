@@ -23,7 +23,7 @@ chmod +x gping_install.sh
 ./gping_install.sh
 ```
 
-Also a python pip3 installation is required for the `pymap` and `argparse` module.
+Also a python pip3 installation is required for the `pymap` module.
 
 ```
 python3 -m pip install -r req.txt
@@ -43,7 +43,9 @@ Example- for debian distributions, the installation would look like this:
 xargs sudo apt-get install -y < requirements.txt
 ```
 
-OR you could install it using the program `install.sh`
+OR you could install it using the program `install.sh`. To run the install: `bash install.sh` OR `chmod +x install.sh && ./install.sh`.
+
+To update, use the file `update.sh` by running the command `bash update.sh`
 
 # Running
 
