@@ -1,0 +1,1 @@
+cd binmap && sudo chmod +x fastmap.sh && sudo cp * /usr/bin/
