@@ -63,7 +63,9 @@ Now if you want to use this program in your terminal you can use the command `$ 
 
 To update the program in `/usr/bin` execute this one liner:
 
-`git clone https://github.com/FluffySnowman/fastmap.git && cd fastmap && sudo chmod +x fastmap.sh && sudo mv * /usr/bin/`
+```bash
+git clone https://github.com/FluffySnowman/fastmap.git && cd fastmap && sudo chmod +x fastmap.sh && sudo mv * /usr/bin/
+```
 
 If you get an error related to the `docs` folder do not be alarmed. The `docs` folder has no important files related to the runtime of the program. Just images for the `README.md` file.
 
