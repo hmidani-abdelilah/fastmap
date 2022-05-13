@@ -294,9 +294,9 @@ do
 	
 	elif [[ $prompt_input == "banner" ]] ; then
 
-		figletarr=(slant block rectangles lean shadow big)
-		figlettot=6
-		finalfig=${figletarr[$RANDOM % 6]}
+		figletarr=(slant block lean shadow big)
+		figlettot=5
+		finalfig=${figletarr[$RANDOM % 5]}
 
 		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
 	
