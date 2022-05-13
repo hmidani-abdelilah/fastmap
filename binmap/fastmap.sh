@@ -48,11 +48,11 @@ do
 
 			echo "Screen will remain blank for a bit"
 			echo "================================================================" | lolcat
-			sudo nmap -p0- -A -T4 -vvv $ipsub_scanvar_0x1 | grep "open port" > open_ports.txt
-			cat open_ports.txt
+			sudo nmap -p0- -A -T4 -vvv $ipsub_scanvar_0x1 | grep "open port" > /usr/bin/open_ports.txt
+			cat /usr/bin/open_ports.txt
 			echo "================================================================" | lolcat
 			echo "Amount of open ports: "
-			echo | wc -l open_ports.txt
+			echo | wc -l /usr/bin/open_ports.txt
 			echo "================================================================" | lolcat
 
 		elif [[ $scan_type_0x1 == "arp" ]] ; then
@@ -102,10 +102,10 @@ do
 		read -p "Interface name>>> " tt
 		sleep 3
 		echo "Starting capture..."
-		sudo tcpdump -w packets.pcap -i $tt
+		sudo tcpdump -w /usr/bin/packets.pcap -i $tt
 		echo "ALL PACKETS CAPTURED"
 		echo "================================================================" | lolcat
-		sudo tcpdump -r packets.pcap
+		sudo tcpdump -r /usr/bin/packets.pcap
 		echo "================================================================" | lolcat
 
 	elif [[ $prompt_input == "trace" ]] ; then
@@ -163,11 +163,11 @@ do
 		echo "================================================================" | lolcat
 		read -p "Enter gateway to scan for>>> " pymap_0x1
 
-		sudo python3 pymap.py -t $pymap_0x1 > online_hosts_pymap.txt
+		sudo python3 /usr/bin/pymap.py -t $pymap_0x1 > /usr/bin/online_hosts_pymap.txt
 		echo "Calculating total amount of online hosts..." | randtype -t 5,12000 | lolcat
-		cat online_hosts_pymap.txt
-		cat online_hosts_pymap.txt | grep -v -e "-----------------------------------" -e "IP Address" -e "MAC Address" | wc -l > total_hosts_online_pymap.txt
-		cat total_hosts_online_pymap.txt && echo " hosts online"
+		cat /usr/bin/online_hosts_pymap.txt
+		cat /usr/bin/online_hosts_pymap.txt | grep -v -e "-----------------------------------" -e "IP Address" -e "MAC Address" | wc -l > /usr/bin/total_hosts_online_pymap.txt
+		cat /usr/bin/total_hosts_online_pymap.txt && echo " hosts online"
 
 		echo "================================================================" | lolcat
 	
@@ -238,7 +238,7 @@ do
 		echo "Starting Python Port Scanner" | randtype -t 5,12000 | lolcat
 		echo "This is gonna be a bit slow" | randtype -t 5,12000 | lolcat
 		read -p "Enter ip address to scan>>> " pyport_0x1
-		sudo python3 pyport.py $pyport_0x1
+		sudo python3 /usr/bin/pyport.py $pyport_0x1
 		echo "================================================================" | lolcat
 	
 	elif [[ $prompt_input == "traffic" ]] ; then
