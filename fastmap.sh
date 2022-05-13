@@ -8,7 +8,7 @@ read -p "Press [ENTER] to start program"
 
 echo ""
 
-figlet -f slant "FastMap" | lolcat
+figlet -f slant "FastMap" | randtype -t 5,2000| lolcat
 
 echo ""
 
@@ -292,11 +292,15 @@ do
 		echo "Closing zenmap..." | randtype -t 5,12000 | lolcat
 		echo "================================================================" | lolcat
 		
+	elif [[ $prompt_input == "banner" ]] ; then
+
+		figlet -f slant "FastMap" | randtype -t 5,2000| lolcat
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
-		echo "l: execute last command"| lolcat
+		echo "banner: prints fastmap banner" | randtype -t 5,2000 | lolcat
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
 		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
