@@ -294,7 +294,11 @@ do
 		
 	elif [[ $prompt_input == "banner" ]] ; then
 
-		figlet -f slant "FastMap" | randtype -t 5,2000| lolcat
+		figletarr=(slant block broadway calgphy2)
+		figlettot=4
+		finalfig=${figletarr[$RANDOM % 2]}
+
+		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
 	
 	elif [[ $prompt_input == "help" ]] ; then
 

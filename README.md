@@ -93,6 +93,8 @@ Every time you return a commnand, the value of "i" will increment hence causing 
 
 `>>> help`: Displays help list
 
+`>>> banner`: Prints the banner (fastmap) in a random figlet font
+
 `>>> ping`: Opens ping modue
 
 To use this module, follow the exmaple given below:
