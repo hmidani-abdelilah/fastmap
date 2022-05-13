@@ -65,6 +65,8 @@ bash bin_install.sh
 
 # Running
 
+https://user-images.githubusercontent.com/51316255/168198646-5d16801e-a270-4cd6-87a8-a61ffdb1b5e7.mp4
+
 To run fastmap, use `bash` as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
 
 The file that controls everything in fastmap is `main.sh` so to run it you will have to do this:
