@@ -17,6 +17,7 @@ echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
 echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | randtype -t 5,12000 | lolcat
 echo ""
+
 echo "================================================================" | lolcat
 
 while [ $increment -lt 100 ]
