@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng"
+echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap"
 echo "PLEASE INSTALL THESE libraries WITH YOUR PACKAGE MANAGER"
 echo "NOTE: USE LOWER CASE FOR ALL INPUTS"
 
@@ -283,13 +283,22 @@ do
 
 		echo "Speedtest completed successfully" | randtype -t 5,12000 | lolcat		
 		echo "================================================================" | lolcat
-	
+
+	elif [[ $prompt_input == "guimap" ]] ; then
+
+		echo "================================================================" | lolcat
+		echo "Starting zenmap (gui nmap)" | randtype -t 5,12000 | lolcat
+		sudo zenmap
+		echo "Closing zenmap..." | randtype -t 5,12000 | lolcat
+		echo "================================================================" | lolcat
+		
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
 		echo "l: execute last command"| lolcat
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
+		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
 		echo "traffic: open traffic total monitoring module" | lolcat
