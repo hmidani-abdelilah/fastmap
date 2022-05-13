@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap"
+echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap, figlet"
 echo "PLEASE INSTALL THESE libraries WITH YOUR PACKAGE MANAGER"
 echo "NOTE: USE LOWER CASE FOR ALL INPUTS"
 
@@ -8,7 +8,7 @@ read -p "Press [ENTER] to start program"
 
 echo ""
 
-figlet -f slant "FastMap" | lolcat
+figlet -f slant "FastMap" | randtype -t 5,2000| lolcat
 
 echo ""
 
@@ -292,11 +292,19 @@ do
 		echo "Closing zenmap..." | randtype -t 5,12000 | lolcat
 		echo "================================================================" | lolcat
 	
+	elif [[ $prompt_input == "banner" ]] ; then
+
+		figletarr=(slant block rectangles lean shadow big)
+		figlettot=6
+		finalfig=${figletarr[$RANDOM % 6]}
+
+		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
-		echo "banner: prints fastmap banner" | randtype -t 5,2000 | lolcat
+		echo "banner: prints fastmap banner with a random figlet font" | randtype -t 5,2000 | lolcat
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
 		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
