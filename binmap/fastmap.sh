@@ -299,6 +299,16 @@ do
 		finalfig=${figletarr[$RANDOM % 5]}
 
 		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
+
+	elif [[ $prompt_input == "scan" ]] ; then
+
+		echo "================================================================" | lolcat
+		echo "Starting wavemon" | randtype -t 5,12000 | lolcat
+
+		sudo wavemon
+
+		echo "Stopped wavemon" | randtype -t 5,12000 | lolcat
+		echo "================================================================" | lolcat
 	
 	elif [[ $prompt_input == "help" ]] ; then
 
@@ -320,7 +330,8 @@ do
 		echo "pyport: runs python port scanning module" | randtype -t 5,2000 | lolcat
 		echo "ss: shows ss runners" 
 		echo "fapi: opens fing api calling module" 
-		echo "wifiaudit: tried to hack wifi networks" | lolcat
+		echo "wifiaudit: tried to hack wifi networks"
+		echo "scan: scans for wireless networks around you" | randtype -t 5,2000 | lolcat
 		echo "exit: exits program"
 		echo "================================================================" | lolcat
 
