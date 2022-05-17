@@ -48,8 +48,7 @@ do
 
 			echo "Screen will remain blank for a bit"
 			echo "================================================================" | lolcat
-			sudo nmap -p0- -A -T4 -vvv $ipsub_scanvar_0x1 | grep "open port" > /usr/bin/open_ports.txt
-			sudo cat /usr/bin/open_ports.txt
+			sudo nmap -p0- -A -T4 -vvv $ipsub_scanvar_0x1 | grep "open port" > /usr/bin/open_ports.txt			sudo cat /usr/bin/open_ports.txt
 			echo "================================================================" | lolcat
 			echo "Amount of open ports: "
 			sudo echo | wc -l /usr/bin/open_ports.txt
