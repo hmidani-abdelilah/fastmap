@@ -293,13 +293,11 @@ do
 		echo "================================================================" | lolcat
 	
 	elif [[ $prompt_input == "banner" ]] ; then
-
+	
 		figletarr=(slant block lean shadow big)
-		figlettot=5
-		finalfig=${figletarr[$RANDOM % 5]}
-
-		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
-
+		figrand=$[$RANDOM % ${#figletarr[@]}]
+		figlet -f ${figletarr[$figrand]} "FastMap" | randtype -t 5,2000| lolcat
+	
 	elif [[ $prompt_input == "scan" ]] ; then
 
 		echo "================================================================" | lolcat
