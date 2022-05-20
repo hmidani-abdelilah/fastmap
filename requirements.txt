@@ -15,3 +15,4 @@ vnstati
 randtype
 speedtest-cli
 bash
+snort

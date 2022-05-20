@@ -11,7 +11,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-TO INSTALL THE `GP` (GRPAHICAL PINGING MODULE) YOU WILL HAVE TO DO IT MANUALLY.
+TO RUN THE `GP` (GRPAHICAL PINGING MODULE) YOU WILL HAVE TO INSTALL `gping` MANUALLY.
 
 Either go to the site of gping and install it by following the steps [gping site](https://github.com/orf/gping)
 
@@ -23,7 +23,7 @@ chmod +x gping_install.sh
 ./gping_install.sh
 ```
 
-Also a python pip3 installation is required for the `pymap` module.
+A python pip3 installation is required for the `pymap` module.
 
 ```
 python3 -m pip install -r req.txt
@@ -32,7 +32,7 @@ python3 -m pip install -r req.txt
 You must have these libraries installed.
 
 ```
-figlet curl jq lolcat nmap sudo tcpdump traceroute host mtr tmux aircrack-ng vnstat vnstati randtype speedtest-cli bash zenmap figlet wavemon
+figlet curl jq lolcat nmap sudo tcpdump traceroute host mtr tmux aircrack-ng vnstat vnstati randtype speedtest-cli bash zenmap figlet wavemon snort
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
@@ -156,3 +156,5 @@ To use this module, you will need to input the interface name that you want to c
 ![vnstatpi](/docs/vnstati_pi.png)
 
 `>>> speed`: Runs speedtest-cli to test latency, upload speed and download speed to the nearest server.
+
+`>>> snort`: Runs snort with configured constants set by the user when installing and performs it on the network (Given by the prompt of `gateway/netmask`) and sniffs for malicious traffic and intruisions on the network. 

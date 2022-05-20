@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap, figlet, wavemon"
+echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap, figlet, wavemon, snort"
 echo "PLEASE INSTALL THESE libraries WITH YOUR PACKAGE MANAGER"
 echo "NOTE: USE LOWER CASE FOR ALL INPUTS"
 
@@ -16,6 +16,7 @@ read -p "Value of i: " increment
 echo ""
 echo "NOW THE PROGRAM WILL LOOP. PRESS CNTL+C TO QUIT"
 echo "WIFIAUDIT MODULE IS BROKEN. DO NOT USE!!!" | randtype -t 5,12000 | lolcat
+echo "MAKE SURE YOU HAVE SNORT INSTALLED AND CONFIGURED BEFORE RUNNING THE SNORT COMMAND!!!"
 echo ""
 
 echo "================================================================" | lolcat
@@ -295,10 +296,8 @@ do
 	elif [[ $prompt_input == "banner" ]] ; then
 
 		figletarr=(slant block lean shadow big)
-		figlettot=5
-		finalfig=${figletarr[$RANDOM % 6=5]}
-
-		figlet -f $finalfig "FastMap" | randtype -t 5,2000| lolcat
+		figrand=$[$RANDOM % ${#figletarr[@]}]
+		figlet -f ${figletarr[$figrand]} "FastMap" | randtype -t 5,2000| lolcat
 	
 	elif [[ $prompt_input == "scan" ]] ; then
 
@@ -310,17 +309,31 @@ do
 		echo "Stopped wavemon" | randtype -t 5,12000 | lolcat
 		echo "================================================================" | lolcat
 	
+	elif [[ $prompt_input == "snort" ]] ; then
+
+		echo "================================================================" | lolcat
+		echo "Starting snort interface........................................" | randtype -t 5,12000 | lolcat
+		echo "MAKE SURE YOU HAVE INSTALLED SNORT ALREADY BEFORE RUNNING THIS" | randtype -t 5,12000 
+
+		read -p "Enter gateway/netmask>>> " snort_0x1
+		echo "PRESS CNTL+C TO STOP SNORTING" | randtype -t 5,12000 | lolcat
+
+		sudo snort -d -l /var/log/snort/ -h $snort_0x1 -A console -c /etc/snort/snort.conf
+
+		echo "================================================================" | lolcat
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "help: displays this help menu"
-		echo "banner: prints fastmap banner with a random figlet font" | randtype -t 5,2000 | lolcat
+		echo "banner: prints fastmap banner with a random figlet font"
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
 		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
-		echo "traffic: open traffic total monitoring module" | lolcat
-		echo "speed: opens speed testing module (speedtest-cli)" | randtype -t 5,2000 | lolcat
+		echo "traffic: open traffic total monitoring module" | randtype -t 5,2000 | lolcat
+		echo "snort: sniffs network for malicious packets and intruisions" | randtype -t 5,2000 | lolcat
+		echo "speed: opens speed testing module (speedtest-cli)"
 		echo "gp: opens graphical pinging module" | randtype -t 5,2000 | lolcat
 		echo "trace: traces packets to specified host"
 		echo "gtrace: traces packets to specified host in GUI" | lolcat
