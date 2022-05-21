@@ -11,7 +11,7 @@ while [ 1 -lt 2 ] ; do
         port "Performs port scan on specified host" \
         lp "Lists all open ports cleanly" \
         synscan "Performs syn scan" \
-        scanon "Scans operating system based on MAC address of specified targets" \
+        scanos "Scans operating system based on MAC address of specified targets" \
         quit "exits the program" \
         --width="700" --height="500"`
 
@@ -26,12 +26,14 @@ while [ 1 -lt 2 ] ; do
             --text="Enter host/subnet to scan" \
             --entry-text "192.168.1.1" \
             --width="500" --height="350"`
-        nmap -sn $netmaphost > temp.txt
+        sudo python3 pymap.py --target $netmaphost > temp.txt
+		cat temp.txt | grep -v -e "-----------------------------------" -e "IP Address" -e "MAC Address" | wc -l >> temp.txt
+        echo "Hosts online" >> temp.txt
         notify-send "ARP SCAN COMPLETED :)"
         zenity --text-info \
             title="Arp Scan Output" \
             --filename="temp.txt" \
-            --width="500" --height="350"
+            --width="600" --height="450"
 
     elif [[ $listval1 == "port" ]] ; then
 
@@ -40,13 +42,13 @@ while [ 1 -lt 2 ] ; do
             --title="Host/subnet to scan" \
             --text="Enter host/subnet to scan" \
             --entry-text "192.168.1.1" \
-            --width="500" --height="350"`
-            sudo nmap -p0- -A -T4 -vvv $netmaphost > temp.txt
+            --width="550" --height="400"`
+            sudo python3 pyport.py $netmaphost > temp.txt
             notify-send "PORT SCAN COMPLETED :)"
             zenity --text-info \
                 title="Porn Scan Output" \
                 --filename="temp.txt" \
-                --width="500" --height="350"
+                --width="600" --height="450"
 
     elif [[ $listval1 == "quit" ]] ; then
         break
