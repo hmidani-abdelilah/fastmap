@@ -8,7 +8,7 @@ zenity --version
 listval1=`zenity --list \
     --title ="Command to execute" \
     --column="Command" --column="Description" \
-    netmap "performs network scan"
+    netmap "performs network scan" \
     quit "exits the program"`
 
 echo $listval1 > list1guimap.psv
@@ -24,8 +24,8 @@ while [ 1 -lt 2 ] ; do
         notify-send "Scan Completed!"
         zenity --text-info \
             title="Output" \
-            --filename="temp.txt" \
-    elif  [[ $listval1 == "quit" ]] ; then
+            --filename="temp.txt"
+    elif [[ $listval1 == "quit" ]] ; then
         break
     else
         echo "Please select a value"
