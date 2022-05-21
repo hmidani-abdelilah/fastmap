@@ -17,3 +17,4 @@ speedtest-cli
 bash
 snort
 zenity
+libnotify-bin
