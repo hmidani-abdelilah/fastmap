@@ -1,4 +1,11 @@
-figletarr=(slant block lean shadow big)
-figrand=$[$RANDOM % ${#figletarr[@]}]
-echo ${figletarr[$figrand]}
-figlet -f ${figletarr[$figrand]} "FastMap" | randtype -t 5,2000| lolcat
+#!/bin/bash
+
+zenity --forms --title="Question" --add-entry="Question" &
+
+sleep 1
+
+window="$(xdotool search --name 'Question')"
+
+xdotool windowactivate "$window"
+
+xdotool type 'some text'
