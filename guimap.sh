@@ -17,7 +17,7 @@ while [ 1 -lt 2 ] ; do
 
     echo $listval1 > list1guimap.psv
     cat list1guimap.psv
-    
+
     if [[ $listval1 == "arpscan" ]] ; then
 
         echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
@@ -33,7 +33,7 @@ while [ 1 -lt 2 ] ; do
             --filename="temp.txt" \
             --width="500" --height="350"
 
-    elif [[ $listvar1 == "port" ]] ; then
+    elif [[ $listval1 == "port" ]] ; then
 
         echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
         netmaphost=`zenity --entry \
