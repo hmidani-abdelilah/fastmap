@@ -15,6 +15,6 @@ vnstati
 randtype
 speedtest-cli
 bash
-zenmap
-figlet
-wavemon
+snort
+zenity
+libnotify-bin

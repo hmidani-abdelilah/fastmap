@@ -322,6 +322,10 @@ do
 
 		echo "================================================================" | lolcat
 	
+	elif [[ $prompt_input == "gui" ]] ; then
+
+		bash guimap.sh
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
@@ -329,6 +333,9 @@ do
 		echo "banner: prints fastmap banner with a random figlet font"
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
 		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
+		echo ""
+		echo "gui: STARTS GUI FASTMAP MODULE" | randtype -t 5,2000 | lolcat
+		echo ""
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
 		echo "traffic: open traffic total monitoring module" | randtype -t 5,2000 | lolcat
