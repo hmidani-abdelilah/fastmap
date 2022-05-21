@@ -10,11 +10,12 @@ while [ 1 -lt 2 ] ; do
     listval1=`zenity --list \
         --title="Command to execute" \
         --column="Command" --column="Description" \
-        arpscan "Performs network scan" \
+        arpscan "Performs ARP network scan" \
         port "Performs port scan on specified host" \
         lp "Lists all open ports cleanly" \
         synscan "Performs syn scan" \
         scanos "Scans operating system based on MAC address of specified targets" \
+        tpackets "Uses TCPDUMP to collect packets using promiscous mode on network" \
         quit "exits the program" \
         --width="700" --height="500"`
 
@@ -114,6 +115,20 @@ while [ 1 -lt 2 ] ; do
             --filename="temp.txt" \
             --width="600" --height="450"
     
+    elif [[ $listval1 == "tpackets" ]] ; then
+
+        tcpdump -D > temp.txt
+
+        zenity --text-info \
+            --title="CHECK TERMINAL FOR INTERFACE LIST" \
+            --text="CHECK TERMINAL FOR INTERFACE LIST" \
+            --width="600" --height="450"
+
+        netmaphost=`zenity --entry \
+            --title="Network Interface to use" \
+            --text="Type in Interface name" \
+            --entry-text "wlan0" \
+            --width="500" --height="350"`
 
     elif [[ $listval1 == "quit" ]] ; then
         break
