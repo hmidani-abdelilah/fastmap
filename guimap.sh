@@ -5,16 +5,16 @@ read -p "Press enter to start" null0x1
 
 zenity --version
 
-listval1=`zenity --list \
-    --title ="Command to execute" \
-    --column="Command" --column="Description" \
-    netmap "performs network scan" \
-    quit "exits the program"`
 
-echo $listval1 > list1guimap.psv
-cat list1guimap.psv
 while [ 1 -lt 2 ] ; do  
+    listval1=`zenity --list \
+        --title ="Command to execute" \
+        --column="Command" --column="Description" \
+        netmap "performs network scan" \
+        quit "exits the program"`
 
+    echo $listval1 > list1guimap.psv
+    cat list1guimap.psv
     if [[ $listval1 == "netmap" ]] ; then
         netmaphost=`zenity --entry \
             --title="Host/subnet to scan" \
