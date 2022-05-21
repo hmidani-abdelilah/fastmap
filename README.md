@@ -160,3 +160,5 @@ To use this module, you will need to input the interface name that you want to c
 `>>> speed`: Runs speedtest-cli to test latency, upload speed and download speed to the nearest server.
 
 `>>> snort`: Runs snort with configured constants set by the user when installing and performs it on the network (Given by the prompt of `gateway/netmask`) and sniffs for malicious traffic and intruisions on the network. 
+
+`>>> zenmap`: Opens zenmap.

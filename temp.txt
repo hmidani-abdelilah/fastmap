@@ -1,0 +1,10 @@
+Discovered open port 3389/tcp on 127.0.0.1
+Discovered open port 57621/tcp on 127.0.0.1
+Discovered open port 49152/tcp on 127.0.0.1
+Discovered open port 6463/tcp on 127.0.0.1
+Discovered open port 5054/tcp on 127.0.0.1
+Discovered open port 8000/tcp on 127.0.0.1
+Discovered open port 48105/tcp on 127.0.0.1
+7
+Amount of open ports
+     ========================

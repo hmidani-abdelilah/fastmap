@@ -285,7 +285,7 @@ do
 		echo "Speedtest completed successfully" | randtype -t 5,12000 | lolcat		
 		echo "================================================================" | lolcat
 
-	elif [[ $prompt_input == "guimap" ]] ; then
+	elif [[ $prompt_input == "zenmap" ]] ; then
 
 		echo "================================================================" | lolcat
 		echo "Starting zenmap (gui nmap)" | randtype -t 5,12000 | lolcat
@@ -332,7 +332,7 @@ do
 		echo "help: displays this help menu"
 		echo "banner: prints fastmap banner with a random figlet font"
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
-		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
+		echo "zenmap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
 		echo ""
 		echo "gui: STARTS GUI FASTMAP MODULE" | randtype -t 5,2000 | lolcat
 		echo ""
