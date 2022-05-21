@@ -118,10 +118,11 @@ while [ 1 -lt 2 ] ; do
     elif [[ $listval1 == "tpackets" ]] ; then
 
         tcpdump -D > temp.txt
+        cat temp.txt
 
         zenity --text-info \
             --title="CHECK TERMINAL FOR INTERFACE LIST" \
-            --text="CHECK TERMINAL FOR INTERFACE LIST" \
+            --filename="temp.txt" \
             --width="600" --height="450"
 
         netmaphost=`zenity --entry \
