@@ -20,15 +20,18 @@ while [ 1 -lt 2 ] ; do
 
     if [[ $listval1 == "arpscan" ]] ; then
 
-        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
         netmaphost=`zenity --entry \
             --title="Host/subnet to scan" \
             --text="Enter host/subnet to scan" \
             --entry-text "192.168.1.1" \
             --width="500" --height="350"`
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+
         sudo python3 pymap.py --target $netmaphost > temp.txt
 		cat temp.txt | grep -v -e "-----------------------------------" -e "IP Address" -e "MAC Address" | wc -l >> temp.txt
         echo "Hosts online" >> temp.txt
+
         notify-send "ARP SCAN COMPLETED :)"
         zenity --text-info \
             title="Arp Scan Output" \
@@ -37,18 +40,40 @@ while [ 1 -lt 2 ] ; do
 
     elif [[ $listval1 == "port" ]] ; then
 
-        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
         netmaphost=`zenity --entry \
             --title="Host/subnet to scan" \
             --text="Enter host/subnet to scan" \
             --entry-text "192.168.1.1" \
             --width="550" --height="400"`
-            sudo python3 pyport.py $netmaphost > temp.txt
-            notify-send "PORT SCAN COMPLETED :)"
-            zenity --text-info \
-                title="Porn Scan Output" \
-                --filename="temp.txt" \
-                --width="600" --height="450"
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+        sudo python3 pyport.py $netmaphost > temp.txt
+        notify-send "PORT SCAN COMPLETED :)"
+        
+        zenity --text-info \
+            title="Porn Scan Output" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
+
+    elif [[ $listval1 == "lp" ]] ; then
+
+         netmaphost=`zenity --entry \
+            --title="Host/subnet to scan" \
+            --text="Enter host/subnet to scan" \
+            --entry-text "192.168.1.1" \
+            --width="550" --height="400"`
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+
+        sudo nmap -p0- -A -T4 -vvv $netmaphost | grep "open port" > temp.txt
+        cat temp.txt | wc -l >> temp.txt 
+		echo "Amount of open ports" >> temp.txt
+        echo "     ========================" >> temp.txt
+
+        zenity --text-info \
+            title="Porn Scan Output" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
 
     elif [[ $listval1 == "quit" ]] ; then
         break
