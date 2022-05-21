@@ -4,6 +4,9 @@ echo "Welcome to GUIMap.........................................................
 read -p "Press enter to start" null0x1
 
 while [ 1 -lt 2 ] ; do  
+
+    echo "" > temp.txt
+
     listval1=`zenity --list \
         --title="Command to execute" \
         --column="Command" --column="Description" \
@@ -94,6 +97,24 @@ while [ 1 -lt 2 ] ; do
             --filename="temp.txt" \
             --width="600" --height="450"
     
+    elif [[ $listval1 == "scanos" ]] ; then
+
+        netmaphost=`zenity --entry \
+            --title="Host/subnet to scan" \
+            --text="Enter host/subnet to scan" \
+            --entry-text "192.168.1.1" \
+            --width="550" --height="400"`
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+        sudo nmap -O -vvv  $netmaphost > temp.txt
+        notify-send "SYN SCAN COMPLETED :)"
+        
+        zenity --text-info \
+            title="OS Scan Output" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
+    
+
     elif [[ $listval1 == "quit" ]] ; then
         break
     else

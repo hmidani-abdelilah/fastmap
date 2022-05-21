@@ -1,0 +1,28 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-05-22 01:58 IST
+Initiating ARP Ping Scan at 01:58
+Scanning 192.168.1.1 [1 port]
+Completed ARP Ping Scan at 01:58, 0.03s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 01:58
+Completed Parallel DNS resolution of 1 host. at 01:58, 0.01s elapsed
+DNS resolution of 1 IPs took 0.01s. Mode: Async [#: 1, OK: 0, NX: 1, DR: 0, SF: 0, TR: 1, CN: 0]
+Initiating SYN Stealth Scan at 01:58
+Scanning 192.168.1.1 [1000 ports]
+Discovered open port 80/tcp on 192.168.1.1
+Discovered open port 53/tcp on 192.168.1.1
+Discovered open port 445/tcp on 192.168.1.1
+Discovered open port 139/tcp on 192.168.1.1
+Completed SYN Stealth Scan at 01:58, 4.27s elapsed (1000 total ports)
+Nmap scan report for 192.168.1.1
+Host is up, received arp-response (0.0026s latency).
+Scanned at 2022-05-22 01:58:54 IST for 5s
+Not shown: 996 filtered tcp ports (no-response)
+PORT    STATE SERVICE      REASON
+53/tcp  open  domain       syn-ack ttl 64
+80/tcp  open  http         syn-ack ttl 64
+139/tcp open  netbios-ssn  syn-ack ttl 64
+445/tcp open  microsoft-ds syn-ack ttl 64
+MAC Address: BC:62:D2:1A:2C:80 (Genexis International)
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 4.46 seconds
+           Raw packets sent: 1999 (87.940KB) | Rcvd: 7 (292B)
