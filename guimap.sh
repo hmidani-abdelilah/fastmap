@@ -70,6 +70,8 @@ while [ 1 -lt 2 ] ; do
 		echo "Amount of open ports" >> temp.txt
         echo "     ========================" >> temp.txt
 
+        notify-send "PORT SCAN COMPLETED :)"
+
         zenity --text-info \
             title="Porn Scan Output" \
             --filename="temp.txt" \
