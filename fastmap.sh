@@ -324,7 +324,7 @@ do
 	
 	elif [[ $prompt_input == "gui" ]] ; then
 
-
+		bash guimap.sh
 	
 	elif [[ $prompt_input == "help" ]] ; then
 
