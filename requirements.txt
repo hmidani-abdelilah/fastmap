@@ -16,3 +16,4 @@ randtype
 speedtest-cli
 bash
 snort
+zenity

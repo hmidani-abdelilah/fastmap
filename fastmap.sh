@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap, figlet, wavemon, snort"
+echo "PREREQUISITES: figlet, curl, jq, lolcat, nmap, sudo, tcpdump, traceroute, ss, host, nslookup, mtr, tmux, aircrack-ng, vnstat, vnstati, randtype, speedtest-cli, bash, zenmap, figlet, wavemon, snort, zenity"
 echo "PLEASE INSTALL THESE libraries WITH YOUR PACKAGE MANAGER"
 echo "NOTE: USE LOWER CASE FOR ALL INPUTS"
 
@@ -322,6 +322,10 @@ do
 
 		echo "================================================================" | lolcat
 	
+	elif [[ $prompt_input == "gui" ]] ; then
+
+
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
@@ -329,6 +333,9 @@ do
 		echo "banner: prints fastmap banner with a random figlet font"
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
 		echo "guimap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
+		echo ""
+		echo "gui: STARTS GUI FASTMAP MODULE" | randtype -t 5,2000 | lolcat
+		echo ""
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
 		echo "traffic: open traffic total monitoring module" | randtype -t 5,2000 | lolcat

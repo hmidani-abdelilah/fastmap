@@ -32,7 +32,7 @@ python3 -m pip install -r req.txt
 You must have these libraries installed.
 
 ```
-figlet curl jq lolcat nmap sudo tcpdump traceroute host mtr tmux aircrack-ng vnstat vnstati randtype speedtest-cli bash zenmap figlet wavemon snort
+figlet curl jq lolcat nmap sudo tcpdump traceroute host mtr tmux aircrack-ng vnstat vnstati randtype speedtest-cli bash zenmap figlet wavemon snort zenity
 ```
 
 Install these with your prefered package manager for your linux distribution (apt, pacman, yum, dnf etc.).
