@@ -17,17 +17,37 @@ while [ 1 -lt 2 ] ; do
 
     echo $listval1 > list1guimap.psv
     cat list1guimap.psv
+    
     if [[ $listval1 == "arpscan" ]] ; then
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
         netmaphost=`zenity --entry \
             --title="Host/subnet to scan" \
             --text="Enter host/subnet to scan" \
-            --entry-text "192.168.1.1"
-            --width="300" --height="200"`
+            --entry-text "192.168.1.1" \
+            --width="500" --height="350"`
         nmap -sn $netmaphost > temp.txt
         notify-send "ARP SCAN COMPLETED :)"
         zenity --text-info \
-            title="Output" \
-            --filename="temp.txt"
+            title="Arp Scan Output" \
+            --filename="temp.txt" \
+            --width="500" --height="350"
+
+    elif [[ $listvar1 == "port" ]] ; then
+
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+        netmaphost=`zenity --entry \
+            --title="Host/subnet to scan" \
+            --text="Enter host/subnet to scan" \
+            --entry-text "192.168.1.1" \
+            --width="500" --height="350"`
+            sudo nmap -p0- -A -T4 -vvv $netmaphost > temp.txt
+            notify-send "PORT SCAN COMPLETED :)"
+            zenity --text-info \
+                title="Porn Scan Output" \
+                --filename="temp.txt" \
+                --width="500" --height="350"
+
     elif [[ $listval1 == "quit" ]] ; then
         break
     else
