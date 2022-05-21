@@ -2,6 +2,8 @@
 
 Fastmap is an efficient networking tool for linux. It combines the power of nmap, fing's api, tcpdump and much more.
 
+# ADDED GUI SUPPORT (GTK+). USE THE `GUI` COMMAND TO USE THE GUI FASTMAP INTERFACE
+
 # Installation
 
 ```bash
