@@ -16,6 +16,7 @@ while [ 1 -lt 2 ] ; do
         synscan "Performs syn scan" \
         scanos "Scans operating system based on MAC address of specified targets" \
         tpackets "Uses TCPDUMP to collect packets using promiscous mode on network" \
+        speedtest "Perfroms a speedtest using speedtest-cli" \
         quit "exits the program" \
         --width="700" --height="500"`
 
@@ -140,7 +141,17 @@ while [ 1 -lt 2 ] ; do
             --filename="temp.txt" \
             --width="880" --height="500"        
 
-
+    elif [[ $listval1 == "speedtest" ]] ; then
+    
+        echo "SCREEN WILL REMAIN BLANK TILL OUTPUT IS COLLECTED"
+        speedtest-cli > temp.txt
+        notify-send "SPEED TEST COMPLETE :)"
+        
+        zenity --text-info \
+            title="Speedtest Output" \
+            --filename="temp.txt" \
+            --width="600" --height="450"    
+    
     elif [[ $listval1 == "quit" ]] ; then
         break
     else
