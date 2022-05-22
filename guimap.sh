@@ -131,6 +131,16 @@ while [ 1 -lt 2 ] ; do
             --entry-text "wlan0" \
             --width="500" --height="350"`
 
+        echo "PRESS CNTL+C HERE TO FINISH PACKET COLLECTION" | randtype -t 5,12000 | lolcat
+        sudo tcpdump -i $netmaphost -w temp.pcap -vvv
+        sudo tcpdump -r temp.pcap > temp.txt
+
+        zenity --text-info \
+            --title="CHECK TERMINAL FOR INTERFACE LIST" \
+            --filename="temp.txt" \
+            --width="880" --height="500"        
+
+
     elif [[ $listval1 == "quit" ]] ; then
         break
     else
