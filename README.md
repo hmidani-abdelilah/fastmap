@@ -75,8 +75,12 @@ The file that controls everything in fastmap is `main.sh` so to run it you will 
 
 ```bash
 bash
-chmod +x main.sh
-./main.sh
+chmod +x fastmap.sh
+./fastmap.sh
+
+#OR
+
+bash fastmap.sh
 ```
 
 # Usage
