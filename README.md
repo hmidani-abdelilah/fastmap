@@ -4,14 +4,30 @@ Fastmap is an efficient networking tool for linux. It combines the power of nmap
 
 # ADDED GUI SUPPORT (GTK+). USE THE `GUI` COMMAND TO USE THE GUI FASTMAP INTERFACE
 
-# Installation
+# Installation with `git`
 
 ```bash
 git clone https://github.com/FluffySnowman/fastmap.git
 cd fastmap
-chmod +x install.sh
-./install.sh
+bash install.sh
 ```
+
+# Installation through `wget`
+
+Go to the [releases page](https://github.com/FluffySnowman/fastmap/releases) and download the latest version using the Download button or by running the following command:
+
+For this example I will use the first release link. Replace the version number and alpha/beta with the release you choose download
+
+```bash
+wget https://codeload.github.com/FluffySnowman/fastmap/zip/refs/tags/fastmap-v0.9-alpha
+unzip fastmap-fastmap-v0.9-alpha.zip
+cd unzip fastmap-fastmap-v0.9-alpha.zip
+bash install.sh
+```
+
+<br>
+<hr>
+<br>
 
 TO RUN THE `GP` (GRPAHICAL PINGING MODULE) YOU WILL HAVE TO INSTALL `gping` MANUALLY.
 
