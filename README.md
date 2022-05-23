@@ -67,6 +67,8 @@ To update, use the file `update.sh` by running the command `bash update.sh`
 
 <hr>
 
+# BINMAP INSTALLATION IS BROKEN. DO NOT USE
+
 If you wish to install this program globally then you will have to change the mode and move it to your binaries folder (`/usr/bin`). To do this follow these steps-
 
 ```bash
