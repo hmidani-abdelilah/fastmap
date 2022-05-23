@@ -1,6 +1,6 @@
 <p align="center"><img src="/docs/fastmap_icon.png" align="middle" alt="fastmap" /></p>
 
-Fastmap is an efficient networking tool for linux. It combines the power of nmap, tcpdump, snort and much more.
+Fastmap is an efficient tool for linux made for network admins and analysts. It combines the power of nmap, tcpdump, snort and much more.
 
 # ADDED GUI SUPPORT (GTK+). USE THE `GUI` COMMAND TO USE THE GUI FASTMAP INTERFACE
 
