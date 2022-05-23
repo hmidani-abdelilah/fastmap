@@ -157,8 +157,6 @@ while [ 1 -lt 2 ] ; do
     elif [[ $listval1 == "traffic5min" ]] ; then
         
         ifconfig > temp.txt
-
-        notify-send "SPEED TEST COMPLETE :)"
         
         zenity --text-info \
             --title="Interface List" \
@@ -177,6 +175,29 @@ while [ 1 -lt 2 ] ; do
             title="Internet usage /5 mins" \
             --filename="temp.txt" \
             --width="700" --height="550"    
+    
+    elif [[ $listval1 == "trafficHour" ]] ; then
+        
+        ifconfig > temp.txt
+        
+        zenity --text-info \
+            --title="Interface List" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
+
+        netmaphost=`zenity --entry \
+            --title="Network Interface to use" \
+            --text="Enter in Interface name" \
+            --entry-text "wlan0" \
+            --width="500" --height="350"`
+
+        vnstat -h -i $netmaphost > temp.txt
+
+        zenity --text-info \
+            title="Internet usage /hour" \
+            --filename="temp.txt" \
+            --width="700" --height="550"    
+    
     
     elif [[ $listval1 == "quit" ]] ; then
         break
