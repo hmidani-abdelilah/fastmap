@@ -21,7 +21,7 @@ For this example I will use the first release link. Replace the version number a
 ```bash
 wget https://codeload.github.com/FluffySnowman/fastmap/zip/refs/tags/fastmap-v0.9-alpha
 unzip fastmap-fastmap-v0.9-alpha.zip
-cd unzip fastmap-fastmap-v0.9-alpha.zip
+cd fastmap-fastmap-v0.9-alpha.zip
 bash install.sh
 ```
 
