@@ -17,8 +17,10 @@ while [ 1 -lt 2 ] ; do
         scanos "Scans operating system based on MAC address of specified targets" \
         tpackets "Uses TCPDUMP to collect packets using promiscous mode on network" \
         speedtest "Perfroms a speedtest using speedtest-cli" \
+        traffic5min "Uses vnstat to display the traffic on the network with 5 minute gap" \
+        trafficHour "Uses vnstat to display the traffice on the network with a gap of 1 hour" \
         quit "exits the program" \
-        --width="700" --height="500"`
+        --width="800" --height="500"`
 
     echo $listval1 > list1guimap.psv
     cat list1guimap.psv
@@ -151,6 +153,30 @@ while [ 1 -lt 2 ] ; do
             title="Speedtest Output" \
             --filename="temp.txt" \
             --width="600" --height="450"    
+
+    elif [[ $listval1 == "traffic5min" ]] ; then
+        
+        ifconfig > temp.txt
+
+        notify-send "SPEED TEST COMPLETE :)"
+        
+        zenity --text-info \
+            --title="Interface List" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
+
+        netmaphost=`zenity --entry \
+            --title="Network Interface to use" \
+            --text="Enter in Interface name" \
+            --entry-text "wlan0" \
+            --width="500" --height="350"`
+
+        vnstat -5 -i $netmaphost > temp.txt
+
+        zenity --text-info \
+            title="Internet usage /5 mins" \
+            --filename="temp.txt" \
+            --width="700" --height="550"    
     
     elif [[ $listval1 == "quit" ]] ; then
         break
