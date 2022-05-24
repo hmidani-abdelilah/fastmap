@@ -210,11 +210,7 @@ while [ 1 -lt 2 ] ; do
             --entry-text "google.com" \
             --width="500" --height="350"`
 
-        zenity --text-info \
-            title="How to quit" \
-            --filename="temp.txt" \
-            --width="700" --height="550"
-
+        echo "CLOSE MTR WINDOW TO END TRACEROUTE"
 
         sudo mtr $netmaphost
 
