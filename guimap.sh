@@ -19,6 +19,7 @@ while [ 1 -lt 2 ] ; do
         speedtest "Perfroms a speedtest using speedtest-cli" \
         traffic5min "Uses vnstat to display the traffic on the network with 5 minute gap" \
         trafficHour "Uses vnstat to display the traffice on the network with a gap of 1 hour" \
+        traceroutegui "Traces packets to specified host" \
         quit "exits the program" \
         --width="800" --height="500"`
 
@@ -199,6 +200,27 @@ while [ 1 -lt 2 ] ; do
             --width="700" --height="550"    
     
     
+    elif [[ $listval1 == "traceroutegui" ]]; then
+
+        echo "Close window to end traceroute" > temp.txt
+
+        netmaphost=`zenity --entry \
+            --title="Traceroute" \
+            --text="Enter host to trace packets to" \
+            --entry-text "google.com" \
+            --width="500" --height="350"`
+
+        zenity --text-info \
+            title="How to quit" \
+            --filename="temp.txt" \
+            --width="700" --height="550"
+
+
+        sudo mtr $netmaphost
+
+        echo "Traceroute complete"
+            
+
     elif [[ $listval1 == "quit" ]] ; then
         break
     else
