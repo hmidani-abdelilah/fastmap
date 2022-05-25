@@ -89,12 +89,10 @@ https://user-images.githubusercontent.com/51316255/168697213-29e66eb7-9cc0-48db-
 
 To run fastmap, use `bash` as a terminal and interpretrer for the shell script as fastmap is not stable or compatible with other shells such as `zsh`, `fish`, `ash`, `sh`.
 
-The file that controls everything in fastmap is `main.sh` so to run it you will have to do this:
+The file that controls everything in fastmap is `fastmap.sh` however, I recently added a `RUN.sh` file which updates fastmap to the latest version when run and automatically executes the `fastmap.sh` file
 
 ```bash
-bash
-chmod +x fastmap.sh
-./fastmap.sh
+bash RUN.sh
 
 #OR
 
