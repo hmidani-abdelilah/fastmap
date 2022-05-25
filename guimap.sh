@@ -234,6 +234,8 @@ while [ 1 -lt 2 ] ; do
 
         rustscan -a $netmaphost --ulimit 5000 | grep "open" > temp.txt
 
+        notify-send "RustScan Port Mapping Complete :)"
+
         zenity --text-info \
             title="RustScan Output" \
             --filename="temp.txt" \
