@@ -41,6 +41,12 @@ chmod +x gping_install.sh
 ./gping_install.sh
 ```
 
+<br>
+
+To use the `rustscan` moduel you will have to [install RustScan](https://github.com/RustScan/RustScan).
+
+<br>
+
 A python pip3 installation is required for the `pymap` module.
 
 ```
