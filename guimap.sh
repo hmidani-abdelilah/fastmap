@@ -20,6 +20,7 @@ while [ 1 -lt 2 ] ; do
         traffic5min "Uses vnstat to display the traffic on the network with 5 minute gap" \
         trafficHour "Uses vnstat to display the traffice on the network with a gap of 1 hour" \
         traceroutegui "Traces packets to specified host" \
+        rustscan "Performs a portscan using RustScan" \
         quit "exits the program" \
         --width="800" --height="500"`
 
@@ -215,7 +216,28 @@ while [ 1 -lt 2 ] ; do
         sudo mtr $netmaphost
 
         echo "Traceroute complete"
-            
+
+    elif [[ $listval1 == "rustscan" ]]; then
+
+        echo "DO NOT CLOSE WINDOW OR INTERRUPT SCAN FOR BEST RESULTS" > temp.txt
+
+        zenity --text-info \
+            title="WARNING" \
+            --filename="temp.txt" \
+            --width="600" --height="450"    
+
+         netmaphost=`zenity --entry \
+            --title="Host(s) to scan" \
+            --text="Enter host to scan ports for" \
+            --entry-text "127.0.0.1" \
+            --width="500" --height="350"`
+
+        rustscan -a $netmaphost --ulimit 5000 | grep "open" > temp.txt
+
+        zenity --text-info \
+            title="RustScan Output" \
+            --filename="temp.txt" \
+            --width="700" --height="550"  
 
     elif [[ $listval1 == "quit" ]] ; then
         break
