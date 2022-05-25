@@ -1,2 +1,21 @@
 sudo apt-get update
-sudo apt-get install -y < requirements.txt
+sudo apt-get install -y figlet \
+curl \
+jq \
+lolcat \
+nmap \
+sudo \
+tcpdump \
+traceroute \
+host \
+mtr \
+tmux \
+aircrack-ng \
+vnstat \
+vnstati \
+randtype \
+speedtest-cli \
+bash \
+snort \
+zenity \
+libnotify-bin \
