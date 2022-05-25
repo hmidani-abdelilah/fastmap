@@ -70,6 +70,16 @@ do
 			sudo nmap -O -vvv $ipsub_scanvar_0x1 
 
 		fi
+	
+	elif [[ $prompt_input == "rscan" ]] ; then
+
+		echo "Starting rust scan" | randtype -t 5,12000 | lolcat
+		read -p "Enter host+/subnet to scan>>> " rscan_var_0x1
+
+		rustscan -a $rscan_var_0x1
+
+		echo "Scan Complete"
+
 	elif [[ $prompt_input == "fapi" ]] ; then
 		read -p "API url with auth key: " api_url1
 		echo "ENTERED API URL: $api_url1"
@@ -330,7 +340,8 @@ do
 		echo "help: displays this help menu"
 		echo "banner: prints fastmap banner with a random figlet font"
 		echo "netmap: opens network mapping module" | randtype -t 5,2000 | lolcat
-		echo "zenmap: starts nmap-gui (zenmap) through the terminal" | randtype -t 5,2000 | lolcat
+		echo "rscan: pipes input to rustscan and displays results" | randtype -t 5,2000 | lolcat 
+		echo "zenmap: starts nmap-gui (zenmap) through the terminal"
 		echo ""
 		echo "gui: STARTS GUI FASTMAP MODULE" | randtype -t 5,2000 | lolcat
 		echo ""
