@@ -94,7 +94,7 @@ The file that controls everything in fastmap is `fastmap.sh` however, I recently
 ```bash
 bash RUN.sh
 
-#OR
+#OR IF YOU HAVE THE PACKAGES ALREADY INSTALLED AND UPDATED
 
 bash fastmap.sh
 ```
