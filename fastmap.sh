@@ -336,15 +336,19 @@ do
 	
 	elif [[ $prompt_input == "stresstest" ]] ; then
 
+		echo "YOU WILL NEED GPING INSTALLED AND TMUX TO MONITOR STRESS TESTING"
+
 		cd stress_testing
 
 		read -p "udp/dns?>>> " stresstest_0x1
 
-		if [[ $stresstest_0x1 == "udp" ]] ; then
-		
-			echo "OPEN UP A TERMINAL WINDOW AND PING THE HOST TO VIEW LATENCY DIFFERENCES" | lolcat
+		if [[ $stresstest_0x1 == "udp" ]] ; then	
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
+			tmux new-session -d -s session1 'gping google.com'
+			tmux split-pane
+			tmux send-keys -t 1 "ping google.com" ENTER
+			tmux attach-session
 			read -p "PORT to stress>>> " stresstest_port		
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
 
