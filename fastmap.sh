@@ -345,14 +345,15 @@ do
 		if [[ $stresstest_0x1 == "udp" ]] ; then	
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
-			tmux new-session -d -s session1 'gping google.com'
+			
+			tmux new-session -d -s mainsesh "gping $stresstest_urlip"
 			tmux split-pane
-			tmux send-keys -t 1 "ping google.com" ENTER
-			tmux attach-session
+
 			read -p "PORT to stress>>> " stresstest_port		
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
 
-			python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds
+			tmux send-keys -t 1 "python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds" ENTER
+			tmux attach-session
 
 			notify-send "STRESS TEST COMPLETE :)"
 			echo "STRESS TEST COMPLETE!"
