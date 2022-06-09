@@ -19,9 +19,9 @@ Go to the [releases page](https://github.com/FluffySnowman/fastmap/releases) and
 For this example I will use the first release link. Replace the version number and alpha/beta with the release you choose download
 
 ```bash
-wget https://github.com/FluffySnowman/fastmap
+wget https://github.com/FluffySnowman/fastmap/archive/refs/tags/fastmap-v0.9.5-alpha.zip
 unzip fastmap-fastmap-v0.9-alpha.zip
-cd fastmap-fastmap-v0.9-alpha.zip
+cd https://github.com/FluffySnowman/fastmap/archive/refs/tags/fastmap-v0.9.5-alpha.zip
 bash install.sh
 ```
 
