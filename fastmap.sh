@@ -338,10 +338,26 @@ do
 
 		cd stress_testing
 
-		
+		read -p "udp/dns?>>> " stresstest_0x1
 
-		python3 start.py 
-	
+		if [[ $stresstest_0x1 == "udp" ]] ; then
+		
+			echo "OPEN UP A TERMINAL WINDOW AND PING THE HOST TO VIEW LATENCY DIFFERENCES" | lolcat
+
+			read -p "IP/URL to stress>>> " stresstest_urlip	
+			read -p "PORT to stress>>> " stresstest_port		
+			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
+
+			python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_port
+
+			notify-send "STRESS TEST COMPLETE :)"
+			echo "STRESS TEST COMPLETE!"
+		else
+
+			echo "no option selected"
+
+		fi
+
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
@@ -379,6 +395,6 @@ do
 	fi
 
 	let "increment=increment+1"
-
+	
 done
 figlet -f slant "Goodbye!" | lolcat
