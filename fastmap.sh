@@ -356,9 +356,8 @@ do
 			tmux attach-session
 
 			notify-send "STRESS TEST COMPLETE :)"
-			echo "STRESS TEST COMPLETE!"
 
-			tmux send-keys -t 1 "echo "TYPE IN 'EXIT' TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING""
+			tmux send-keys -t 1 "echo TYPE IN EXIT TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING" ENTER
 
 		elif [[ $stresstest_0x1 == "web" ]] ; then
 
@@ -368,14 +367,13 @@ do
 			tmux split-pane
 	
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
-
+			
 			tmux send-keys -t 1 "python start.py bomb "$stresstest_urlip" 0 50 proxy.txt 100 "$stresstest_seconds"" ENTER
 			tmux attach-session
 
 			notify-send "STRESS TEST COMPLETE :)"
-			echo "STRESS TEST COMPLETE!"
 
-			tmux send-keys -t 1 "echo "TYPE IN 'EXIT' TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING""
+			tmux send-keys -t 1 "echo TYPE IN EXIT TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING" ENTER
 
 		fi
 
