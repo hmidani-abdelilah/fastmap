@@ -348,12 +348,23 @@ do
 			read -p "PORT to stress>>> " stresstest_port		
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
 
-			python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_port
+			python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds
 
 			notify-send "STRESS TEST COMPLETE :)"
 			echo "STRESS TEST COMPLETE!"
-		else
 
+		elif [[ $stresstest_0x1 == "dns" ]] ; then
+		
+			echo "OPEN UP A TERMINAL WINDOW AND PING THE HOST TO VIEW LATENCY DIFFERENCES" | lolcat
+
+			read -p "IP/URL to stress>>> " stresstest_urlip	
+			read -p "PORT to stress>>> " stresstest_port		
+			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
+
+			python3 start.py dns ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds dns.txt
+
+			notify-send "STRESS TEST COMPLETE :)"
+			echo "STRESS TEST COMPLETE!"
 			echo "no option selected"
 
 		fi
@@ -371,7 +382,8 @@ do
 		echo ""
 		echo "tpackets: captures packets on specified interface" | lolcat
 		echo "ping: opens ping module"
-		echo "traffic: open traffic total monitoring module" | randtype -t 5,2000 | lolcat
+		echo "stresstest: opens module to test the response time of servers" | randtype -t 5,2000 | lolcat
+		echo "traffic: open traffic total monitoring module"
 		echo "snort: sniffs network for malicious packets and intruisions" | randtype -t 5,2000 | lolcat
 		echo "speed: opens speed testing module (speedtest-cli)"
 		echo "gp: opens graphical pinging module" | randtype -t 5,2000 | lolcat
