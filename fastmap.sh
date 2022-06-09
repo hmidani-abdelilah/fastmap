@@ -334,6 +334,14 @@ do
 
 		bash guimap.sh
 	
+	elif [[ $prompt_input == "stresstest" ]] ; then
+
+		cd stress_testing
+
+		
+
+		python3 start.py 
+	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
