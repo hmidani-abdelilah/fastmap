@@ -340,7 +340,7 @@ do
 
 		cd stress_testing
 
-		read -p "udp/dns?>>> " stresstest_0x1
+		read -p "udp/web?>>> " stresstest_0x1
 
 		if [[ $stresstest_0x1 == "udp" ]] ; then	
 
@@ -358,19 +358,24 @@ do
 			notify-send "STRESS TEST COMPLETE :)"
 			echo "STRESS TEST COMPLETE!"
 
-		elif [[ $stresstest_0x1 == "dns" ]] ; then
-		
-			echo "OPEN UP A TERMINAL WINDOW AND PING THE HOST TO VIEW LATENCY DIFFERENCES" | lolcat
+			tmux send-keys -t 1 "echo "TYPE IN 'EXIT' TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING""
+
+		elif [[ $stresstest_0x1 == "web" ]] ; then
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
-			read -p "PORT to stress>>> " stresstest_port		
+			
+			tmux new-session -d -s mainsesh "gping $stresstest_urlip"
+			tmux split-pane
+	
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
 
-			python3 start.py dns ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds dns.txt
+			tmux send-keys -t 1 "python start.py bomb "$stresstest_urlip" 0 50 proxy.txt 100 "$stresstest_seconds"" ENTER
+			tmux attach-session
 
 			notify-send "STRESS TEST COMPLETE :)"
 			echo "STRESS TEST COMPLETE!"
-			echo "no option selected"
+
+			tmux send-keys -t 1 "echo "TYPE IN 'EXIT' TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING""
 
 		fi
 
