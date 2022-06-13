@@ -375,6 +375,8 @@ do
 
 			tmux send-keys -t 1 "echo TYPE IN EXIT TO GO BACK TO FASTMAP AND PRESS CNTL+C OR Q TO QUIT THE GRAPHICAL PINGING" ENTER
 
+			cd ..
+
 		fi
 
 	elif [[ $prompt_input == "help" ]] ; then
