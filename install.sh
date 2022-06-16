@@ -16,6 +16,9 @@ vnstati \
 randtype \
 speedtest-cli \
 bash \
-snort \
 zenity \
 libnotify-bin \
+libpcap-dev \
+bison \
+flex\
+snort
