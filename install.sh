@@ -20,5 +20,5 @@ zenity \
 libnotify-bin \
 libpcap-dev \
 bison \
-flex\
+flex \
 snort
