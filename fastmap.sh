@@ -346,6 +346,7 @@ do
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
 			
+			
 			tmux new-session -d -s mainsesh "ping $stresstest_urlip"
 			tmux split-pane
 
@@ -362,6 +363,7 @@ do
 		elif [[ $stresstest_0x1 == "web" ]] ; then
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
+			
 			
 			tmux new-session -d -s mainsesh "ping $stresstest_urlip"
 			tmux split-pane
