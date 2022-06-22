@@ -346,7 +346,7 @@ do
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
 			
-			tmux new-session -d -s mainsesh "gping $stresstest_urlip"
+			tmux new-session -d -s mainsesh "ping $stresstest_urlip"
 			tmux split-pane
 
 			read -p "PORT to stress>>> " stresstest_port		
@@ -363,7 +363,7 @@ do
 
 			read -p "IP/URL to stress>>> " stresstest_urlip	
 			
-			tmux new-session -d -s mainsesh "gping $stresstest_urlip"
+			tmux new-session -d -s mainsesh "ping $stresstest_urlip"
 			tmux split-pane
 	
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
