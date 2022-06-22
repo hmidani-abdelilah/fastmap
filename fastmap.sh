@@ -415,7 +415,8 @@ do
 		echo "ss: shows ss runners" 
 		echo "fapi: opens fing api calling module" 
 		echo "wifiaudit: tried to hack wifi networks"
-		echo "scan: scans for wireless networks around you" | randtype -t 5,2000 | lolcat
+		echo "scan: scans for wireless networks around you"
+		echo "iplookup: finds information about specified IP" | randtype -t 5,2000 | lolcat 
 		echo "exit: exits program"
 		echo "================================================================" | lolcat
 	
