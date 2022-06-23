@@ -388,7 +388,6 @@ do
 			cat iplookup.txt | jq .
 			rm iplookup.txt
 	
-	
 	elif [[ $prompt_input == "help" ]] ; then
 
 		echo "================================================================" | lolcat
