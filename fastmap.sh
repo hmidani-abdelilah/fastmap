@@ -386,6 +386,7 @@ do
 			read -p "IP to lookup>>> " iplookup_0x1
 			curl http://ip-api.com/json/$iplookup_0x1 > iplookup.txt
 			cat iplookup.txt | jq .
+			rm iplookup.txt
 
 	
 	elif [[ $prompt_input == "help" ]] ; then
