@@ -353,7 +353,7 @@ do
 			read -p "PORT to stress>>> " stresstest_port		
 			read -p "Amount of time to stress (seconds)>>> " stresstest_seconds
 
-			tmux send-keys -t 1 "python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 10 $stresstest_seconds" ENTER
+			tmux send-keys -t 1 "python3 start.py udp ""$stresstest_urlip":"$stresstest_port"" 100 $stresstest_seconds" ENTER
 			tmux attach-session
 
 			notify-send "STRESS TEST COMPLETE :)"
