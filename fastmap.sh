@@ -420,7 +420,7 @@ do
 		echo "wifiaudit: tried to hack wifi networks"
 		echo "scan: scans for wireless networks around you"
 		echo "iplookup: finds information about specified IP" | randtype -t 5,2000 | lolcat 
-		echo "exit: exits program"
+		echo "exit/quit/q: exits program"
 		echo "================================================================" | lolcat
 	
 	else 
