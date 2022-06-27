@@ -23,7 +23,7 @@ while [ $increment -lt 100 ]
 do
 
 	read -p ">>> " prompt_input
-	if [[ $prompt_input == "exit" ]] ; then
+	if [[ $prompt_input == "exit" ]] || [[ $prompt_input == "quit" ]] || [[ $prompt_input == "q" ]] ; then
 
 		echo "Exiting program"
 		break
