@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Welcome to GUIMap..............................................." | randtype -t 5,12000 | lolcat
+figlet -f slant "GUI Mode Enabled" | randtype -t 5,2000| lolcat
 read -p "Press enter to start" null0x1
 
 while [ 1 -lt 2 ] ; do  
@@ -268,4 +268,4 @@ while [ 1 -lt 2 ] ; do
     fi
 done
 echo "Thank you for using GUIMap!!"
-figlet -f slant "Goodbye" | randtype -t 5,2000| lolcat
+figlet -f slant "CLI Mode Enabled" | randtype -t 5,2000| lolcat
