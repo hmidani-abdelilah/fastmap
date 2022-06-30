@@ -20,6 +20,7 @@ while [ 1 -lt 2 ] ; do
         traffic5min "Uses vnstat to display the traffic on the network with 5 minute gap" \
         trafficHour "Uses vnstat to display the traffice on the network with a gap of 1 hour" \
         traceroutegui "Traces packets to specified host" \
+        iplookup "Finds information of the specified IP" \
         rustscan "Performs a portscan using RustScan" \
         quit "exits the program" \
         --width="800" --height="500"`
@@ -241,6 +242,25 @@ while [ 1 -lt 2 ] ; do
             --filename="temp.txt" \
             --width="700" --height="550"  
 
+    elif [[ $listval1 == "iplookup" ]] ; then
+
+        ipl=`zenity --entry \
+            --title="IPLOOKUP" \
+            --text="Enter IP to lookup" \
+            --entry-text "1.1.1.1" \
+            --width="550" --height="400"`
+
+        curl http://ip-api.com/json/$ipl > iplookup.txt
+		cat iplookup.txt | jq . > temp.txt
+
+        notify-send "IP lokup complete"
+        
+        zenity --text-info \
+            title="IP Lookup Output" \
+            --filename="temp.txt" \
+            --width="600" --height="450"
+    
+    	rm iplookup.txt
     elif [[ $listval1 == "quit" ]] ; then
         break
     else
